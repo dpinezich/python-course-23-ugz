@@ -1,6 +1,5 @@
-#import random
-#number_to_be_guessed = random.randint(1, 10)
-
+import random
+number_to_be_guessed = random.randint(1, 10)
 
 print("Guessing game: try to guess the number (the number is between 1 and 10)")
 
