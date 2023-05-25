@@ -1,4 +1,4 @@
-z = [["Paris","Fr",3.5], ["Rom","It",4.2], ["Madrid","Sp",3.2]]
+z = [["Paris","Fr",3.5, "Beautiful"], ["Rom","It",4.2], ["Madrid","Sp",3.2]]
 
 print("List:", z)
 print("Length:", len(z))
