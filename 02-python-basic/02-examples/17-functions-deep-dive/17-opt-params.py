@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-def volume(width, length, depth=1, color="schwarz"):
-=======
 def volume(width, length, depth=1, color="black"):
->>>>>>> origin/main
     print("Values:", width, length, depth, color)
-    print("Volume:", width * length * depth, "Farbe:", color)
+    print("Volume:", width * length * depth, "Color:", color)
 
 
 volume(4, 6, 2, "red")
