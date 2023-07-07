@@ -7,7 +7,7 @@ age_groups, age_count = [], []
 
 df = pd.read_csv('../data/20200306_hundehalter.csv')
 
-for i, count in df['ALTER'].value_counts().sort_values().iteritems():
+for i, count in df['ALTER'].value_counts().sort_values().items():
     age_groups.append(i)
     age_count.append(count)
 

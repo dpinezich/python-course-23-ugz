@@ -6,7 +6,7 @@ df = pd.read_csv('../data/20200306_hundehalter.csv')
 dog_age = df['GEBURTSJAHR_HUND'].value_counts() # Fehler 11 / 18 beachten
 dog_age_dict = {}
 current_year = 2021
-for i, count in dog_age.iteritems():
+for i, count in dog_age.items():
     if len(str(i)) > 3:
         dog_age_dict[current_year-i] = count
 

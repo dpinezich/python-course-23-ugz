@@ -36,7 +36,7 @@ dog_color = df['HUNDEFARBE'].value_counts()
 dog_age = df['GEBURTSJAHR_HUND'].value_counts() # Fehler 11 / 18 beachten
 dog_age_dict = {}
 current_year = 2021
-for i, count in dog_age.iteritems():
+for i, count in dog_age.items():
     if len(str(i)) > 3:
         dog_age_dict[current_year-i] = count
 
@@ -52,7 +52,7 @@ dog_owner = df['HALTER_ID'].value_counts()
 dog_owners_multiple_dogs = {}
 count_single_dogs, count_multiple_dogs = 0, 0
 
-for i, count in df['HALTER_ID'].value_counts().iteritems():
+for i, count in df['HALTER_ID'].value_counts().items():
     if count > 1:
         dog_owners_multiple_dogs[i] = count
         count_multiple_dogs += 1
@@ -70,8 +70,8 @@ for i, count in df['HALTER_ID'].value_counts().iteritems():
 
 # Nach Kreis sortiert?
 dog_owner_place = collections.OrderedDict(sorted(df['STADTKREIS'].value_counts().items(), key=lambda x: x[0]))
-#print(dog_owner_place)
+print(dog_owner_place)
 
 # Nach Anz sortiert?
 dog_owner_place_sorted = collections.OrderedDict(sorted(df['STADTKREIS'].value_counts().items(), key=lambda x: x[1], reverse=True))
-#print(dog_owner_place_sorted)
+print(dog_owner_place_sorted)
