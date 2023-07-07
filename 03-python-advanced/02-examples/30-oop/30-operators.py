@@ -14,8 +14,8 @@ class Vehicle:
 
 
 
-opel = Car("Opel Admiral", 60)
-volvo = Car("Volvo Amazon", 45)
+opel = Vehicle("Opel Admiral", 60)
+volvo = Vehicle("Volvo Amazon", 45)
 if opel > volvo:
     print("Opel is faster")
 elif opel == volvo:
