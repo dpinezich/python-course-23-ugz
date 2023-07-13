@@ -3,12 +3,13 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('../00-material/ogd_air_d/ugz_ogd_air_d1_2022.csv')
+df = pd.read_csv('../../00-material/ogd_air_d/ugz_ogd_air_d1_2022.csv')
 # print(df.describe())
 # print(df)
 
 data = df[(df.Standort == "Zch_Stampfenbachstrasse") & (df.Einheit == "µg/m3")]
-print(df.head())
+data = data[0:45]
+
 
 # Initialize a grid of plots with an Axes for each walk
 grid = sns.FacetGrid(data, col="Datum", hue="Datum", palette="tab20c",
@@ -26,4 +27,6 @@ grid.set(xticks=np.arange(5), yticks=[-3, 3],
 
 # Adjust the arrangement of the plots
 grid.fig.tight_layout(w_pad=1)
+
+plt.show()
 
