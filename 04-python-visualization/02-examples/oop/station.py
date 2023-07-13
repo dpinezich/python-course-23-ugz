@@ -109,7 +109,7 @@ print(rosengarten_2)
 if rosengarten_1 > rosengarten_2:
     print("Rosengarten 1 has higher 03 values")
 else:
-    print("Rosengarten 2 has lower 03 values")
+    print("Rosengarten 1 has lower 03 values")
 
 rosengarten_3 = AdvancedStation(name="Rosengarten 3", nox=73, no=12, no2=20, o3=40, pm10=200, pm25=250)
 rosengarten_4 = AdvancedStation(name="Rosengarten 4", nox=73, no=12, no2=20, o3=40, pm10=280, pm25=150)
@@ -118,4 +118,4 @@ print(rosengarten_4)
 if rosengarten_3 > rosengarten_4:
     print("Rosengarten 3 has higher pm10 values")
 else:
-    print("Rosengarten 4 has lower pm10 values")
+    print("Rosengarten 3 has lower pm10 values")
