@@ -1,0 +1,11 @@
+numpy
+seaborn
+pandas
+bokeh
+geopandas
+plotly
+matplotlib
+altair
+plotnine
+gleam
+pygal
