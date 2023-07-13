@@ -2,7 +2,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('../00-material/ogd_air_d/ugz_ogd_air_d1_2022.csv')
+df = pd.read_csv('../../00-material/ogd_air_d/ugz_ogd_air_d1_2022.csv')
 # print(df.describe())
 # print(df)
 

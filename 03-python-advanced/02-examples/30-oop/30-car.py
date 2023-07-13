@@ -1,7 +1,7 @@
 class Car:
     velocity = 0
 
-    def acceleration(self, value):
+    def accelerate(self, value):
         self.velocity += value
 
     def output(self):

@@ -1,0 +1,1 @@
+Daten von https://data.stadt-zuerich.ch/dataset/luftqualitaet-stunden-aktuelle-messungen

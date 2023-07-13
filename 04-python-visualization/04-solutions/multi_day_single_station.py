@@ -1,18 +1,29 @@
+import numpy as np
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('../../00-material/ogd_air_d/ugz_ogd_air_d1_2022.csv')
+df = pd.read_csv('../00-material/ogd_air_d/ugz_ogd_air_d1_2022.csv')
 # print(df.describe())
 # print(df)
 
-day1 = df[(df.Standort == "Zch_Stampfenbachstrasse") & (df.Datum == "2022-01-01T00:00+0100") & (df.Einheit == "µg/m3")]
-day2 = df[(df.Standort == "Zch_Stampfenbachstrasse") & (df.Datum == "2022-01-02T00:00+0100") & (df.Einheit == "µg/m3")]
+data = df[(df.Standort == "Zch_Stampfenbachstrasse") & (df.Einheit == "µg/m3")]
+print(df.head())
 
-frames = [day1, day2]
-data = pd.concat(frames)
+# Initialize a grid of plots with an Axes for each walk
+grid = sns.FacetGrid(data, col="Datum", hue="Datum", palette="tab20c",
+                     col_wrap=4, height=1.5)
 
-sns.barplot(data=data, x="Parameter", y="Wert", hue="Datum")
-sns.set_theme(style="darkgrid")
+# Draw a horizontal line to show the starting point
+grid.refline(y=0, linestyle=":")
 
-plt.show()
+# Draw a line plot to show the trajectory of each random walk
+grid.map(plt.plot, "Parameter", "Wert", marker="o")
+
+# Adjust the tick positions and labels
+grid.set(xticks=np.arange(5), yticks=[-3, 3],
+         xlim=(-.5, 4.5), ylim=(-3.5, 3.5))
+
+# Adjust the arrangement of the plots
+grid.fig.tight_layout(w_pad=1)
+
