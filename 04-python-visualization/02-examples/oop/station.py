@@ -59,6 +59,12 @@ class Station:
         self.no2 = no2
         self.o3 = o3
 
+    def __eq__(self, other):
+        if self.o3 == other.o3:
+            return True
+        else:
+            return False
+
     def __gt__(self, other):
         if self.o3 > other.o3:
             return True
@@ -81,30 +87,29 @@ class AdvancedStation(Station):
         self.pm10 = pm10
         self.pm25 = pm25
 
-        def __gt__(self, other):
-            if self.pm10 > other.pm10:
-                return True
-            else:
-                return False
-
-        def __lt__(self, other):
-            if self.pm10 < other.pm10:
-                return True
-            else:
-                return False
-
-        def __str__(self):
-            return f"Hello from the more modern {self.name}"
+    def __gt__(self, other):
+        if self.pm10 > other.pm10:
+            return True
+        else:
+            return False
+    def __lt__(self, other):
+        if self.pm10 < other.pm10:
+            return True
+        else:
+            return False
+    def __str__(self):
+        return f"Hello from the more modern {self.name}"
 
 
 rosengarten_1 = Station(name="Rosengarten 1", nox=73, no=12, no2=20, o3=40)
 rosengarten_2 = Station(name="Rosengarten 2", nox=80, no=12, no2=26, o3=40)
 print(rosengarten_2)
 
+
 if rosengarten_1 > rosengarten_2:
     print("Rosengarten 1 has higher 03 values")
 else:
-    print("Rosengarten 2 has higher 03 values")
+    print("Rosengarten 2 has lower 03 values")
 
 rosengarten_3 = AdvancedStation(name="Rosengarten 3", nox=73, no=12, no2=20, o3=40, pm10=200, pm25=250)
 rosengarten_4 = AdvancedStation(name="Rosengarten 4", nox=73, no=12, no2=20, o3=40, pm10=280, pm25=150)
@@ -113,4 +118,4 @@ print(rosengarten_4)
 if rosengarten_3 > rosengarten_4:
     print("Rosengarten 3 has higher pm10 values")
 else:
-    print("Rosengarten 4 has higher pm10 values")
+    print("Rosengarten 4 has lower pm10 values")
