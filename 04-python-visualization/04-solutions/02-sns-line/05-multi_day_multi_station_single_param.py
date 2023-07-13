@@ -9,6 +9,12 @@ df = pd.read_csv('../../00-material/ogd_air_d/ugz_ogd_air_d1_2022.csv')
 data = df[(df.Standort == "Zch_Stampfenbachstrasse") & (df.Parameter == "NO2")]
 data2 = df[(df.Standort == "Zch_Schimmelstrasse") & (df.Parameter == "NO2")]
 
+data['Datum'] = df['Datum'].str.slice(5,9)
+data2['Datum'] = df['Datum'].str.slice(5,9)
+
+#show also other slices like 0,3 or 0,6 and so on
+
+
 frames = [data, data2]
 data = pd.concat(frames)
 
