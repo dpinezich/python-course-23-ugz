@@ -9,3 +9,6 @@ altair
 plotnine
 gleam
 pygal
+altair_viewer
+vega_datasets
+missingno
